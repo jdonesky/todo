@@ -1,0 +1,9 @@
+-CSS
+-TypeScript  
+-Git
+-bit of backend  
+-Jest + Enzyme  
+-frontend interviewing topics  
+-Sass  
+-bit of CI/CD  
+-bit of cloud basics  
