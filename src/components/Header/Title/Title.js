@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './Title.css'
+import classes from './Title.module.css'
 
-export const title = props => {
+export const Title = props => {
     return (
         <div className={classes.Container}>
             <h1 className={classes.Title}>{props.title}</h1>
