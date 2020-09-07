@@ -1,0 +1,11 @@
+.Container {
+    margin: 1rem auto;
+    width: 15rem;
+    height: 15rem;
+}
+
+.Title {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: rgba(2,3,3,0.5);
+    font-weight: 100;
+}
