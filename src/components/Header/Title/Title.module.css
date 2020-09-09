@@ -6,7 +6,7 @@
 }
 
 .Title {
-    font: 100px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 100px;
     color: rgba(200,125,115,0.25);
     font-weight: 100;
     height:100%;

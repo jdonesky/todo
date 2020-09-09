@@ -1,0 +1,26 @@
+.InputContainer {
+    max-width: 500px;
+    height: 4rem;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #cccccc;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: white;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.InputElement {
+    border: none;
+    height: 90%;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.InputElement:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #ccc;
+    font-weight: 100;
+}

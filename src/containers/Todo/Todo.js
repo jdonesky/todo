@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Input } from '../../components/UI/Input/Input.js';
 import TodoItems from "../../components/todoItems";
 
 export default class Todo extends Component {
@@ -23,10 +24,10 @@ export default class Todo extends Component {
     }
 
     render() {
-        // const entries = this.state.todoEntries.length ? <TodoItems items={this.state.todoEntries}/> : null
         return (
             <div>
-                <input onChange={(event) => this.onChangeHandler(event)} value={this.state.todoEntry}/>
+                <Input changed={(event) => this.onChangeHandler(event)} value={this.state.todoEntry} placeholder="What needs to be done?"/>
+                {/*<input onChange={(event) => this.onChangeHandler(event)} value={this.state.todoEntry}/>*/}
                 <button onClick={() => this.onSubmitHandler()}>Submit</button>
                 <TodoItems items={this.state.todoEntries}/>
             </div>
