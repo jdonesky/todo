@@ -9,6 +9,7 @@
     position: relative;
     right: 13.5rem;
     top: 4.5rem;
+    cursor: pointer;
 }
 
 .Chevron {
@@ -18,7 +19,6 @@
     font-size: 25px;
 }
 
-.Chevron:hover,
 .Chevron:active,
 .Chevron.active {
     color: #282c34;

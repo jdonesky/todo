@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Title.module.css'
+import classes from './Title.module.css';
 
 export const Title = props => {
     return (
@@ -7,5 +7,5 @@ export const Title = props => {
             <h1 className={classes.Title}>{props.title}</h1>
         </div>
     )
-}
+};
 

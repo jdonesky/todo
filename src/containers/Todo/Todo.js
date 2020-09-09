@@ -38,7 +38,6 @@ export default class Todo extends Component {
                     <SelectAll toggled = {this.toggleAllHandler} />
                     <Input changed={(event) => this.changeHandler(event)} type="text" value={this.state.todoEntry} placeholder="What needs to be done?"/>
                 </form>
-
                 <TodoItems items={this.state.todoEntries}/>
             </div>
         );

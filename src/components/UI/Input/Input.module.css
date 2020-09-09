@@ -2,8 +2,7 @@
     max-width: 500px;
     height: 4rem;
     padding: 0;
-
-    box-shadow: 1px 1px 2px #cccccc;
+    box-shadow: 1px 3px 3px #cccccc;
     box-sizing: border-box;
     background-color: white;
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -24,6 +23,7 @@
 }
 
 ::placeholder {
-    color: #ccc;
+    color: #EFEFEF;
+    font-style: italic;
     font-weight: 100;
 }

@@ -1,0 +1,22 @@
+.Container {
+    max-width: 500px;
+    height: 4rem;
+    padding: 0;
+    z-index: 4;
+    border-top: 1px solid #EFEFEF;
+    box-shadow: 1px 1px 3px #cccccc;
+    box-sizing: border-box;
+    background-color: white;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.Item {
+    border: none;
+    box-sizing: border-box;
+    height: 90%;
+    font-size: 25px;
+    font-weight: 100;
+    margin: 0;
+    padding: 1rem 0 0 4.5rem;
+    z-index:4;
+}

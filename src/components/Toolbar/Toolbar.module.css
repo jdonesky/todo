@@ -1,0 +1,20 @@
+.Toolbar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    height: 3rem;
+    z-index:4;
+    background-color: white;
+    border: 1px solid #EFEFEF;
+    box-shadow: 1px 3px 3px #cccccc;
+    vertical-align: center;
+    margin: 0;
+    padding: 0;
+    color: #cccccc;
+}
+
+.Buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
