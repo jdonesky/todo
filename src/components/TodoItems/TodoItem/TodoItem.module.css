@@ -24,6 +24,11 @@
     z-index:4;
 }
 
+.Complete {
+    color: #cccccc;
+    text-decoration-line: line-through;
+}
+
 .Circle {
     display: flex;
     height: 35px;
