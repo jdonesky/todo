@@ -19,6 +19,7 @@
     font-size: 25px;
 }
 
+.Chevron:hover,
 .Chevron:active,
 .Chevron.active {
     color: #282c34;

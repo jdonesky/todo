@@ -36,7 +36,9 @@
 }
 
 .Checked {
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9jQKqdYV53KeNqrbqQMJjvcYlUwoaOABgdg&usqp=CAU");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9jQKqdYV53KeNqrbqQMJjvcYlUwoaOABgdg&usqp=CAU");
+    background-position: center;
+    background-size: cover;
     overflow: hidden;
     border: 1px solid #A3D397;
 }

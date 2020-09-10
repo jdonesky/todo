@@ -8,8 +8,17 @@ import classes from './Todo.module.css'
 export default class Todo extends Component {
     state = {
         todoEntry: '',
-        todoEntries: []
+        todoEntries: [],
+        allComplete: false
     };
+
+    componentDidUpdate(prevProps,prevState) {
+        if (this.state.todoEntries.every(entry => entry.complete) && !prevState.todoEntries.every(entry => entry.complete)) {
+            this.setState({
+                allComplete: true
+            })
+        }
+    }
 
     changeHandler = (event) => {
         this.setState({
@@ -20,7 +29,7 @@ export default class Todo extends Component {
     submitHandler = (event) => {
         event.preventDefault()
         const entry = this.state.todoEntry;
-        const entries = [...this.state.todoEntries, entry];
+        const entries = [...this.state.todoEntries, {entry:entry, complete: false}];
         this.setState({
             todoEntry: '',
             todoEntries: entries
@@ -28,14 +37,16 @@ export default class Todo extends Component {
     }
 
     toggleAllHandler = () => {
-
+        this.setState({
+            todoEntries: this.state.todoEntries.map(item => {return {...item, complete: true}})
+        })
     }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.submitHandler} className={classes.TodoForm}>
-                    <SelectAll toggled = {this.toggleAllHandler} />
+                    <SelectAll active={this.state.allComplete} toggled={this.toggleAllHandler} />
                     <Input changed={(event) => this.changeHandler(event)} type="text" value={this.state.todoEntry} placeholder="What needs to be done?"/>
                 </form>
                 <TodoItems items={this.state.todoEntries}/>
