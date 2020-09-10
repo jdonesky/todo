@@ -42,15 +42,27 @@ export default class Todo extends Component {
     }
 
     toggleAllHandler = () => {
-        if (!this.state.allComplete) {
+        if (this.state.todoEntries.every(entry => entry.complete)) {
             this.setState({
-                todoEntries: this.state.todoEntries.map(item => {return {...item, complete: true}})
+                todoEntries: this.state.todoEntries.map(entry => {return {...entry, complete: false}})
             })
         } else {
             this.setState({
-                todoEntries: this.state.todoEntries.map(item => {return {...item, complete: false}})
+                todoEntries: this.state.todoEntries.map(entry => {return {...entry, complete: true}})
             })
         }
+
+
+
+        // if (!this.state.allComplete) {
+        //     this.setState({
+        //         todoEntries: this.state.todoEntries.map(item => {return {...item, complete: true}})
+        //     })
+        // } else {
+        //     this.setState({
+        //         todoEntries: this.state.todoEntries.map(item => {return {...item, complete: false}})
+        //     })
+        // }
     }
 
     toggleCheckHandler = (i) => {
