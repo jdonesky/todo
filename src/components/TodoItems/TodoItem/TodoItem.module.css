@@ -13,6 +13,7 @@
 
 .Item {
     display: flex;
+    flex: 1;
     border: none;
     box-sizing: border-box;
     height: 90%;
@@ -23,7 +24,7 @@
     z-index:4;
 }
 
-.Icon {
+.Circle {
     display: flex;
     height: 35px;
     width: 35px;
@@ -42,3 +43,17 @@
     overflow: hidden;
     border: 1px solid #A3D397;
 }
+
+.Delete {
+    display: flex;
+    background-image: url('https://www.pinclipart.com/picdir/big/109-1094306_open-thin-red-x-png-clipart.png');
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    height: 13px;
+    width: 13px;
+    margin: 27px 20px 0 0;
+    cursor: pointer;
+}
+
+

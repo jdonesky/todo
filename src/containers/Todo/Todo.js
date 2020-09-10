@@ -32,7 +32,7 @@ export default class Todo extends Component {
     }
 
     submitHandler = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const entry = this.state.todoEntry;
         const entries = [...this.state.todoEntries, {entry:entry, complete: false}];
         this.setState({
@@ -53,6 +53,14 @@ export default class Todo extends Component {
         }
     }
 
+    deleteHandler = (i) => {
+        const entries = [...this.state.todoEntries];
+        entries.splice(i,1)
+        this.setState({
+            todoEntries: entries
+        })
+    }
+
     render() {
         return (
             <div>
@@ -60,7 +68,7 @@ export default class Todo extends Component {
                     <SelectAll active={this.state.allComplete} toggled={this.toggleAllHandler} show={this.state.todoEntries.length}/>
                     <Input changed={(event) => this.changeHandler(event)} type="text" value={this.state.todoEntry} placeholder="What needs to be done?"/>
                 </form>
-                <TodoItems items={this.state.todoEntries}/>
+                <TodoItems items={this.state.todoEntries} delete={this.deleteHandler}/>
             </div>
         );
     }
