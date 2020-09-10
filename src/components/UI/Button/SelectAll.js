@@ -6,6 +6,9 @@ import classes from './SelectAll.module.css'
 export const SelectAll = props => {
 
     const iconClass = [classes.Chevron]
+    if (props.show) {
+        iconClass.push(classes.Show)
+    }
     if (props.active) {
         iconClass.push(classes.active)
     }
