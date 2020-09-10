@@ -53,6 +53,14 @@ export default class Todo extends Component {
         }
     }
 
+    toggleCheckHandler = (i) => {
+        const entries = [...this.state.todoEntries];
+        entries[i].complete = !entries[i].complete
+        this.setState({
+            todoEntries: entries
+        })
+    }
+
     deleteHandler = (i) => {
         const entries = [...this.state.todoEntries];
         entries.splice(i,1)
@@ -68,7 +76,7 @@ export default class Todo extends Component {
                     <SelectAll active={this.state.allComplete} toggled={this.toggleAllHandler} show={this.state.todoEntries.length}/>
                     <Input changed={(event) => this.changeHandler(event)} type="text" value={this.state.todoEntry} placeholder="What needs to be done?"/>
                 </form>
-                <TodoItems items={this.state.todoEntries} delete={this.deleteHandler}/>
+                <TodoItems items={this.state.todoEntries} toggleCheck={this.toggleCheckHandler} delete={this.deleteHandler}/>
             </div>
         );
     }

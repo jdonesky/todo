@@ -12,7 +12,7 @@ const todoItem = (props) => {
 
     return (
         <div className={classes.Container}>
-            <span className={checkBoxClass.join(" ")}></span>
+            <div className={checkBoxClass.join(" ")} onClick={props.toggleCheck}></div>
             <li className={classes.Item}>{props.entry}</li>
             <div className={deleteXClass} onClick={props.delete}></div>
         </div>
