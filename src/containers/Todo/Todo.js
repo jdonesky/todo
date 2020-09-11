@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Input } from '../../components/UI/Input/Input.js';
 import { SelectAll } from "../../components/UI/Button/SelectAll";
-import {TodoItems} from "../../components/TodoItems/TodoItems";
+import { TodoItems } from "../../components/TodoItems/TodoItems";
 import classes from './Todo.module.css'
 
 
@@ -9,7 +9,8 @@ export default class Todo extends Component {
     state = {
         todoEntry: '',
         todoEntries: [],
-        allComplete: false
+        allComplete: false,
+        activeTab: 'All'
     };
 
     componentDidUpdate(prevProps,prevState) {
@@ -69,14 +70,42 @@ export default class Todo extends Component {
         })
     }
 
+    clearAllCompletedHandler = () => {
+        this.setState({
+            todoEntries: this.state.todoEntries.filter(entry => !entry.complete)
+        })
+    }
+
+    switchTabHandler = (tab) => {
+        switch (tab) {
+            case 'All':
+                this.setState({
+                    activeTab: 'All'
+                });
+                break;
+            case 'Active':
+                this.setState({
+                    activeTab: 'Active'
+                })
+                break;
+            case 'Completed':
+                this.setState({
+                    activeTab: 'Completed'
+                })
+                break;
+            default:
+                break;
+        }
+    }
+
     render() {
         return (
             <div>
-                <form onSubmit={this.submitHandler} className={classes.TodoForm}>
+                <form onSubmit={this.state.todoEntry.length ? this.submitHandler: null} className={classes.TodoForm}>
                     <SelectAll active={this.state.allComplete} toggled={this.toggleAllHandler} show={this.state.todoEntries.length}/>
                     <Input changed={(event) => this.changeHandler(event)} type="text" value={this.state.todoEntry} placeholder="What needs to be done?"/>
                 </form>
-                <TodoItems items={this.state.todoEntries} toggleCheck={this.toggleCheckHandler} delete={this.deleteHandler}/>
+                <TodoItems items={this.state.todoEntries} toggleCheck={this.toggleCheckHandler} activeTab={this.state.activeTab} delete={this.deleteHandler} clearCompleted={this.clearAllCompletedHandler} switchTab={this.switchTabHandler}/>
             </div>
         );
     }

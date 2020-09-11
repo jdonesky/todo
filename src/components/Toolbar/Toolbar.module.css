@@ -13,8 +13,50 @@
     color: #cccccc;
 }
 
-.Buttons {
+.Incomplete {
+    display: flex;
+    margin: 15px 0 0 10px
+}
+
+.Tabs {
     display: flex;
     justify-content: space-between;
+    margin: 5px;
+}
+
+.Tabs div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.Tabs div:hover {
+    border: 1px solid rgba(200,125,115,0.17);
+    cursor: pointer;
+}
+
+.Tabs div:active,
+.Tabs div.active {
+    border: 1px solid rgba(200,125,115,0.25);
+    cursor: pointer;
+}
+
+.Clear {
+    display: flex;
+    margin: 15px 10px 0 0;
+    visibility: hidden;
+}
+
+.Visible {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.Visible:hover {
+    text-decoration: underline;
+    -moz-text-decoration-color: #a19f9f;
 }
 
