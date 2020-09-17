@@ -15,6 +15,8 @@ export const TodoItems = props => {
         case 'Completed':
             items = props.items.filter(item => item.complete)
             break;
+        default:
+            break;
     }
     items = items.map((item,i) => <TodoItem complete={item.complete} key={i} entry={item.entry} toggleCheck={() => props.toggleCheck(i)} delete={() => props.delete(i)}/>)
     const anyIncomplete= props.items.filter(item => !item.complete).length
